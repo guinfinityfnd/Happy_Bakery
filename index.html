@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="syle.css">
+    <script>
+        $(document).ready(function () {
+            const DOM = document.getElementsByClassName("col");
+            const row = document.getElementsByClassName("row");
+            let i = 1;
+            $('.btn-order').on('click', function () {
+                const selectedToBuy = $(this).parentsUntil(DOM, ".card");
+                selectedToBuy.children('.card-body').children('h6').html();
+                // console.log(selectedToBuy);
+                $('.badge').text(i++);
+                $(this).wrap('<img src="./images/check-circle.svg" width="20px" height="20px">');
+                selectedToBuy.css('box-shadow', '1px 1px 1px 3px #0f0')
+            });
+            $('#small-screen-icons').on('click', function () {
+                $('.nav').toggleClass('showandhide');
+            });
+        });
+    </script>
+    <title>MenuBakery</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row position-sticky top-0">
+            <div class="header-bar d-flex justify-content-around bg bg-warning">
+                <img src="./images/life-preserver.svg" alt="logo" class="logo">
+                <h1 class="text-danger">Menu</h1>
+                <div class="position-relative mt-3">
+                    <img src="./images/cart.svg" alt="cart" class="cart" id="cart" title="Your bought Food!">
+                    <span class="badge bg-primary translate-middle rounded-pill"></span>
+                </div>
+            </div>
+            <span id="small-screen-icons" data-menu><img src="/images/justify.svg" alt="Menu"></span>
+            <ul class="nav">
+                <li class="nav-item side-border selected-li" data-tab-target="#tab-1">
+                    <img src="./images/Bakery-1.jpg" class="bakery-icon">
+                    Daliy Bread
+                </li>
+                <li class="nav-item side-border" data-tab-target="#tab-2">
+                    <img src="./cupcakes/carrotcupcake.png" class="cake-icon">
+                    Cakes
+                </li>
+                <li class="nav-item side-border" data-tab-target="#tab-3">
+                    <img src="./donuts/Sour-cream-donut.png" class="donut-icon">
+                    Special Donuts
+                </li>
+                <li class="nav-item side-border" data-tab-target="#tab-4">
+                    <img src="./cookies/oreo.png" class="cooke-icon">
+                    Cookies
+                </li>
+                <li class="nav-item" data-tab-target="#tab-5">
+                    <img src="./coffee/Black-coffee.png" class="coffee-icon">
+                    Coffees
+                </li>
+            </ul>
+        </div>
+        <marquee behavior="alternative" direction="right">Christmas Promotion - 50%off</marquee>
+        <!-- main contents start -->
+        <div class="container-fluid tab-content">
+            <div class="row active" id="tab-1" data-tab-content>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-1.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-2.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-3.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-4.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-5.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-6.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-7.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-8.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="./images/Bakery-9.jpg" class="card-img-top" alt="bakery-photo">
+                        <div class="card-body">
+                            <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                            <button class="btn-order">order now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <div id="tab-2" data-tab-content>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/Margarita.png" class="card-img-top" alt="cakes-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Margarita <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/mollywaffle-freakshake.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Mollywaffle-freakshake <span
+                                        class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/raspberry-triffle.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Raspberry-triffle <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/rocky-road.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Rocky-road <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/sundae-funday.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Sundae-funday <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/turkish-delight.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Turkish-delight <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/vegan-apple.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Vegan-apple <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/bubblegum.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Bubblegum <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/candy-cloud.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Candy-cloud <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/candy-meadow.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Candy-meadow <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/carrotcupcake.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Carrotcupcake <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/choc-strawberry.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Choc-strawberry <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/CoconutCupcakes.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">CoconutCupcake <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/funfetti-freakshake.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Funfetti-freakshake <span
+                                        class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/galaxycupcake.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Galaxycupcake <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/icecreamcupcake.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Icecreamcupcake <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/love-potion.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Love-potion <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cupcakes/mai-thai.png" class="card-img-top" alt="bakery-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Mai-thai <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <div id="tab-3" data-tab-content>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/donut.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Donut <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/icedringdougnut.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Icedringdougnut <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/jelly.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Jelly <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/Sour-cream-donut.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Sour-cream-donut<span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/sweetsprinkle.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Sweetsprinkle <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/White Sprinkled Donut.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">WhiteSparinkedDonut <span
+                                        class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./donuts/yeastdonut.png" class="card-img-top" alt="donut-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">YeastDonut <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <div id="tab-4" data-tab-content>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/oreo.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Oreo <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/PeanutButter.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">PeanutButter <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/macaroon.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Macaroon <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/Hamantash.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Hamantash <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/gingersnap.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Gingersnap <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/Fortunecookie.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Fortunecookie <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./cookies/figRoll.png" class="card-img-top" alt="cooke-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">FigRoll <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <!-- //////////////////////////////// -->
+            <div id="tab-5" data-tab-content>
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <img src="./coffee/latte.png" class="card-img-top" alt="coffee-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Latte <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./coffee/Macchiato.png" class="card-img-top" alt="coffee-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Macchiato <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./coffee/ristretto.png" class="card-img-top" alt="coffee-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Ristretto <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./coffee/cappuccino.png" class="card-img-top" alt="coffee-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Cappuccino <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./coffee/Black-coffee.png" class="card-img-top" alt="coffee-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">BlackCoffee <span class="dolar-price">$9</span></h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col">
+                        <div class="card">
+                            <img src="./coffee/cuban-expresso.png" class="card-img-top" alt="coffee-photo">
+                            <div class="card-body">
+                                <h6 class="card-title text-center">Cubanexpresso <span class="dolar-price">$9</span>
+                                </h6>
+                            </div>
+                            <div class="card-body d-flex justify-content-between">
+                                <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <button class="btn-order">order now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="overlay"><span id="times" onclick="hide();">&times;</span>
+            <div class="contants">
+            </div>
+        </div> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+</body>
+
+</html>
