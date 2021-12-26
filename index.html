@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bfc3ef21f1.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="syle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         $(document).ready(function () {
             const DOM = document.getElementsByClassName("col");
@@ -19,8 +22,21 @@
                 selectedToBuy.children('.card-body').children('h6').html();
                 // console.log(selectedToBuy);
                 $('.badge').text(i++);
+                if (i == 11) {
+                    Swal.fire({
+                        title: 'Hello customer, your Food is over 10!Thank you for your shopping.!',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
+                    })
+                }
                 $(this).wrap('<img src="./images/check-circle.svg" width="20px" height="20px">');
-                selectedToBuy.css('box-shadow', '1px 1px 1px 3px #0f0')
+                selectedToBuy.css({
+                    boxShadow: '1px 1px 1px 3px #0f0',
+                });
             });
             $('#small-screen-icons').on('click', function () {
                 $('.nav').toggleClass('showandhide');
@@ -33,6 +49,7 @@
 <body>
     <div class="container-fluid">
         <div class="row position-sticky top-0">
+            <p class="text-light position-absolute w-auto" id="specialOffer">We have a special NEWYEAR offer!</p>
             <div class="header-bar d-flex justify-content-around bg bg-warning">
                 <img src="./images/life-preserver.svg" alt="logo" class="logo">
                 <h1 class="text-danger">Menu</h1>
@@ -43,7 +60,7 @@
             </div>
             <span id="small-screen-icons"><img src="/images/justify.svg" alt="Menu"></span>
             <ul class="nav">
-                <li class="nav-item side-border selected-li" data-tab-target="#tab-1">
+                <li class="nav-item side-border" data-tab-target="#tab-1">
                     <img src="./images/Bakery-1.jpg" class="bakery-icon">
                     Daliy Bread
                 </li>
@@ -64,20 +81,21 @@
                     Coffees
                 </li>
             </ul>
-        </div>
-        <marquee behavior="alternative" direction="right">Christmas Promotion - 50%off</marquee>
+        </div><br>
         <!-- main contents start -->
         <div class="container-fluid tab-content">
             <div class="row active" id="tab-1" data-tab-content>
                 <div class="col">
                     <div class="card">
-                        <img src="./images/Bakery.jpg" class="card-img-top" alt="bakery-photo">
+                        <img src="./images/Bakery.png" class="card-img-top" alt="bakery-photo">
                         <div class="card-body">
                             <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now
+                                <i class="fas fa-caret-right"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -89,7 +107,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -101,7 +119,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -113,7 +131,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -125,7 +143,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -138,7 +156,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -150,7 +168,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -162,19 +180,19 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card">
-                        <img src="./images/Bakery-8.jpg" class="card-img-top" alt="bakery-photo">
+                        <img src="./images/Bakery-8.png" class="card-img-top" alt="bakery-photo">
                         <div class="card-body">
                             <h6 class="card-title text-center">Bakery <span class="dolar-price">$9</span></h6>
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -186,7 +204,7 @@
                         </div>
                         <div class="card-body d-flex justify-content-between">
                             <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                            <button class="btn-order">order now</button>
+                            <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -204,7 +222,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -217,7 +235,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -230,7 +248,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -242,7 +260,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -255,7 +273,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -269,7 +287,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -281,7 +299,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -293,7 +311,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -305,7 +323,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -317,7 +335,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -331,7 +349,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -344,7 +362,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -357,7 +375,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -370,7 +388,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -383,7 +401,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -397,7 +415,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -409,7 +427,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -421,7 +439,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -440,7 +458,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -453,7 +471,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -465,7 +483,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -478,7 +496,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -491,7 +509,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -505,7 +523,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -517,7 +535,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -536,7 +554,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -548,7 +566,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -560,7 +578,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -572,7 +590,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -584,7 +602,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -598,7 +616,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -610,7 +628,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -629,7 +647,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -641,7 +659,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -653,7 +671,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -665,7 +683,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -677,7 +695,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
@@ -691,17 +709,13 @@
                             </div>
                             <div class="card-body d-flex justify-content-between">
                                 <span id="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                <button class="btn-order">order now</button>
+                                <button class="btn-order">order now <i class="fas fa-caret-right"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div id="overlay"><span id="times" onclick="hide();">&times;</span>
-            <div class="contants">
-            </div>
-        </div> -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
