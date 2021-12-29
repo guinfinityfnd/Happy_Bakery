@@ -1,10 +1,11 @@
-const overlay = document.querySelector('#overlay');
+const overlayer = document.querySelector('.overlayer');
 const cart = document.querySelector('#cart');
 const times = document.querySelector('#times');
 const tabs = document.querySelectorAll('[data-tab-target]');
 const tabContents = document.querySelectorAll('[data-tab-content]');
 const navItems = document.querySelectorAll('.nav-item');
 const specialClickBtn = document.querySelector('#specialOffer');
+// const alertMessages = document.querySelector('.alert-messages');
 
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -22,7 +23,9 @@ tabs.forEach(tab => {
 
 setTimeout(() => {
     specialClickBtn.style.display = 'none';
-}, 6000);
+}, 9000);
+
+
 
 
 

@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Tangerine");
+html{
+    scroll-behavior: smooth;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -78,29 +82,36 @@ li:hover{
        object-fit: contain;
 }
 
-/* #overlay {
+.alert-messages{
+    position: relative;
+    top: 10%;
+}
+
+.alert{
+    display: flex;
+    justify-content: space-between;
+}
+
+#times{
+    width:30px;
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    cursor: pointer;
+}
+
+.overlayer {  
+    display: none;  
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #000;
     opacity: 0.8;
-    display: none;
+    z-index: 99;
+    overflow: auto;
 }
-
-#times{
-    position: absolute;
-    top: 2%;
-    right:5%;
-    color: #fff;
-    z-index: 99;cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    font-size: 1.5em;
-} */
 
 img:hover{
     cursor: pointer;
@@ -183,8 +194,8 @@ p{
     border-radius: 30px;
     padding: 10px;
     background: linear-gradient(rgb(48, 248, 74),#000);
-    -webkit-animation: rotate-specialoffer 1s 5s;
-            animation: rotate-specialoffer 1s 5s;
+    -webkit-animation: rotate-specialoffer 1s 8s;
+            animation: rotate-specialoffer 1s 8s;
 }
 
 @-webkit-keyframes rotate-specialoffer {
@@ -267,6 +278,22 @@ p{
         display: block;
         z-index: -1;
     }
+
+    .overlayer{
+        opacity: 1;
+    }
+
+    .alert-messages{
+        background-color: #000;
+    }
+
+    .alert{
+        background:none;
+        color: #00ff87;
+        border-color: lightseagreen;
+    }
+
+    #times{
+        width:20px;
+    }
 }
-
-

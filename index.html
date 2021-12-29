@@ -19,7 +19,7 @@
             let i = 1;
             $('.btn-order').on('click', function () {
                 const selectedToBuy = $(this).parentsUntil(DOM, ".card");
-                selectedToBuy.children('.card-body').children('h6').html();
+                const h6Text = selectedToBuy.children('.card-body').children('h6').html();
                 // console.log(selectedToBuy);
                 $('.badge').text(i++);
                 if (i == 11) {
@@ -33,13 +33,20 @@
                         }
                     })
                 }
-                $(this).wrap('<img src="./images/check-circle.svg" width="20px" height="20px">');
+                const checkCircle = $(this).wrap('<img src="./images/check-circle.svg" width="20px" height="20px">');
                 selectedToBuy.css({
                     boxShadow: '1px 1px 1px 3px #0f0',
                 });
+                $('.alert-messages').append(`<div class="alert alert-primary" role="alert">${h6Text}</div>`);
             });
             $('#small-screen-icons').on('click', function () {
                 $('.nav').toggleClass('showandhide');
+            });
+            $('#cart').on('click', function () {
+                $('.overlayer').css('display', 'block');
+            });
+            $('#times').click(function () {
+                $('.overlayer').css('display', 'none');
             });
         });
     </script>
@@ -55,7 +62,7 @@
                 <h1 class="text-danger">Menu</h1>
                 <div class="position-relative mt-3">
                     <img src="./images/cart.svg" alt="cart" class="cart" id="cart" title="Your bought Food!">
-                    <span class="badge bg-primary translate-middle rounded-pill"></span>
+                    <span class=" badge bg-primary translate-middle rounded-pill"></span>
                 </div>
             </div>
             <span id="small-screen-icons"><img src="/images/justify.svg" alt="Menu"></span>
@@ -713,6 +720,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="overlayer">
+                <img src="images/x-circle.svg" id="times" onclick="close();" alt="cross">
+                <div class="alert-messages">
+                    <!-- <div class="alert alert-success" role="alert">hello world</div> -->
                 </div>
             </div>
         </div>
